@@ -14,6 +14,11 @@
                 margin : 0;
                 padding: 0;
             }
+
+            .feedback_comment_container{
+                clear: both;
+            }
+
         </style>
     </head>
     <body>
@@ -27,18 +32,17 @@
                 <li class="feedback_starrating" x-score="4"><span class="glyphicon glyphicon-star-empty" ></li>
                 <li class="feedback_starrating" x-score="5"><span class="glyphicon glyphicon-star-empty" ></li>
             </ul>
-            <br/>
             <div class="feedback_comment_container">
-                </br>
                 <p style="font-size : 0.9em">If you think the quality of data in this form could be improved, please leave a message in the box below.</p>
                 <textarea id="feedback_comment_textarea" class="form-control longtext" rows="4"></textarea>
             </div>
+            <br/>
             <br/>
             <a id="feedback_submit" class="btn btn-primary" href="#hurdur">Submit Feedback</a><br/>
         </div>
     </body>
     <script>
-        $("#feedback").feedbackbar({
+        $("#feedback").feedback({
            feedback_bar : "feedback_bar",
            deafault_score : 5,
            comment_bar : {

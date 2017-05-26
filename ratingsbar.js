@@ -1,5 +1,5 @@
 
-$.fn.feedbackbar = function(o) {
+$.fn.feedback = function(o) {
 
     /**
      * requires > boostrap 3.x.x

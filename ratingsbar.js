@@ -33,6 +33,7 @@ $.fn.feedback = function(o) {
 
     if(feedback_output != false) {
         feedback_output = this.children("." + feedback_output);
+        feedback_output.val(feedback_score);
     }
 
     if(has_comment_input){
@@ -49,7 +50,6 @@ $.fn.feedback = function(o) {
     $.each(feedback_stars, function (k, v) {
         var star = v;
         var star_val = star.getAttribute("x-score");
-
         $(star).on("click", function (e) {
             feedback_score = star_val;
             if(feedback_output != false) {

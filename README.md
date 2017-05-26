@@ -52,7 +52,7 @@ Pass the following object to config and initalize.
 <ul>
   <li>`feedback_bar` - the class name of the ul, containing the feedback symbols themselves (REQURIED)</li>
   <li>`deafault_score` - the inital score of the bar (OPTIONAL - default value of 4)</li>
-  <li>`output` - the class name of an `<input>` tag, to write the selected rating's `x-score` attribute to on update</li>
+  <li>`output` - the class name of an `<input>` tag, to write the selected rating's `x-score` attribute to on update (OPTIONAL)</li>
   <li>`comment_bar` - (OPTIONAL)
     <ul>
       <li>`container` - A container for the comment box + associated elements (REQUIRED, with comment_bar)</li>

@@ -28,11 +28,11 @@
             <p style="font-size:0.9em;">Please rate the quality of data in this form (Did it contain the infromation you were looking for? Was this information accurate?)</p>
             <input class="feedback_output" type="hidden">
             <ul class="feedback_bar">
-                <li class="feedback_starrating" x-score="1"><span class="glyphicon glyphicon-star-empty"></li>
-                <li class="feedback_starrating" x-score="2"><span class="glyphicon glyphicon-star-empty" ></li>
-                <li class="feedback_starrating" x-score="3"><span class="glyphicon glyphicon-star-empty" ></li>
-                <li class="feedback_starrating" x-score="4"><span class="glyphicon glyphicon-star-empty" ></li>
-                <li class="feedback_starrating" x-score="5"><span class="glyphicon glyphicon-star-empty" ></li>
+                <li class="feedback_starrating" x-score="1"><span class="glyphicon glyphicon-star"></span></li>
+                <li class="feedback_starrating" x-score="2"><span class="glyphicon glyphicon-star"></span></li>
+                <li class="feedback_starrating" x-score="3"><span class="glyphicon glyphicon-star"></span></li>
+                <li class="feedback_starrating" x-score="4"><span class="glyphicon glyphicon-star"></span></li>
+                <li class="feedback_starrating" x-score="5"><span class="glyphicon glyphicon-star"></span></li>
             </ul>
             <div class="feedback_comment_container">
                 <p style="font-size : 0.9em">If you think the quality of data in this form could be improved, please leave a message in the box below.</p>
@@ -52,7 +52,9 @@
               container : "feedback_comment_container",
               always_visible : false,
               open_on : 3
-           }
+          },
+           on_class : "glyphicon glyphicon-star",
+           off_class : "glyphicon glyphicon-star-empty"
         });
     </script>
 </html>

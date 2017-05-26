@@ -13,7 +13,8 @@ $.fn.feedback = function(o) {
      *      always_visible : bool,
      *      open_on  : int
      *   }
-     *
+     *  on_image : 
+     *  off_image : 
      * }
      */
 
@@ -30,7 +31,10 @@ $.fn.feedback = function(o) {
     var comment_score_trigger = null;
 
     var feedback_output = o.output == null ? false : o.output;
-
+    
+    var feedback_stars_class_on = o.on_class != null ? o.on_class : "glyphicon-star-empty";
+    var feedback_stars_class_off = o.off_class != null ? o.off_class : "glyphicon-star";
+    
     if(feedback_output != false) {
         feedback_output = this.children("." + feedback_output);
         feedback_output.val(feedback_score);
@@ -79,15 +83,17 @@ $.fn.feedback = function(o) {
     });
 
     draw_rating(feedback_score);
-
+    
+    
+    
     function draw_rating(fromvalue) {
         var unpinned = get_unpinned(fromvalue);
-        unpinned.removeClass("glyphicon-star");
-        unpinned.find("span").addClass("glyphicon-star-empty");
+        unpinned.find("span").removeClass(feedback_stars_class_on);
+        unpinned.find("span").addClass(feedback_stars_class_off);
         unpinned.css("color", "#000");
         var pinned = get_pinned(fromvalue);
-        pinned.find("span").removeClass("glyphicon-star-empty");
-        pinned.find("span").addClass("glyphicon-star");
+        pinned.find("span").removeClass(feedback_stars_class_off);
+        pinned.find("span").addClass(feedback_stars_class_on);
         pinned.css("color", "#FFE303");
     }
 

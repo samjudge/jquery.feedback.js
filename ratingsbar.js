@@ -7,6 +7,7 @@ $.fn.feedback = function(o) {
      * {
      *   feedback_bar : "feedback_bar_classname" (class of a ul in cotnainer - REQUIRED)
      *   deafault_score : n (a int)
+     *   output : feedback_output
      *   comment_bar : {
      *      container : "feedback_comment_container_classname", (a div with a textarea),
      *      always_visible : bool,
@@ -28,6 +29,11 @@ $.fn.feedback = function(o) {
     var comment_input = null;
     var comment_score_trigger = null;
 
+    var feedback_output = o.output == null ? false : o.output;
+
+    if(feedback_output != false) {
+        feedback_output = this.children("." + feedback_output);
+    }
 
     if(has_comment_input){
         //set up some inline styles..
@@ -46,6 +52,9 @@ $.fn.feedback = function(o) {
 
         $(star).on("click", function (e) {
             feedback_score = star_val;
+            if(feedback_output != false) {
+                feedback_output.val(feedback_score);
+            }
             if(has_comment_input) {
                 if(comment_alawys_visible != true) {
                     if (feedback_score <= comment_score_trigger) {
